@@ -23,6 +23,9 @@ importers:
       lucide-react:
         specifier: ^0.292.0
         version: 0.292.0(react@18.3.1)
+      marked-react:
+        specifier: ^3.0.0
+        version: 3.0.0(react@18.3.1)
       react:
         specifier: ^18.3.1
         version: 18.3.1
@@ -886,6 +889,16 @@ packages:
     resolution: {integrity: sha512-rRgUkpEHWpa5VCT66YscInCQmQuPCB1RFRzkkxMxg4b+jaL0V12E3riWWR2Sh5OIiUhCwGW/ZExuEO4Az32E6Q==}
     peerDependencies:
       react: ^16.5.1 || ^17.0.0 || ^18.0.0
+
+  marked-react@3.0.0:
+    resolution: {integrity: sha512-We5IPtdfarVIqypy4LmQ3O8xe9Hk8EBNs4MRUYg5077mbD7GJ+rmV9XAPJ0XK8LfQkCOwGv4I7niXWLXWywyoQ==}
+    peerDependencies:
+      react: ^16.8.0 || >=17.0.0
+
+  marked@15.0.6:
+    resolution: {integrity: sha512-Y07CUOE+HQXbVDCGl3LXggqJDbXDP2pArc2C1N1RRMN0ONiShoSsIInMd5Gsxupe7fKLpgimTV+HOJ9r7bA+pg==}
+    engines: {node: '>= 18'}
+    hasBin: true
 
   merge2@1.4.1:
     resolution: {integrity: sha512-8q7VEgMJW4J8tcfVPy8g09NcQwZdbwFEqhe/WZkoIzjn/3TGDwtOCYtXGxA3O8tPzpczCCDgv+P2P5y00ZJOOg==}
@@ -2056,6 +2069,13 @@ snapshots:
   lucide-react@0.292.0(react@18.3.1):
     dependencies:
       react: 18.3.1
+
+  marked-react@3.0.0(react@18.3.1):
+    dependencies:
+      marked: 15.0.6
+      react: 18.3.1
+
+  marked@15.0.6: {}
 
   merge2@1.4.1: {}
 

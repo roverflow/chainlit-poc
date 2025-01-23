@@ -1,31 +1,19 @@
 import { useEffect } from "react";
 
-import { sessionState, useChatSession } from "@chainlit/react-client";
 import { Playground } from "./components/playground";
-import { useRecoilValue } from "recoil";
-
-const userEnv = {};
+import useSession from "./hooks/useSession";
 
 function App() {
-  const { connect } = useChatSession();
-  const session = useRecoilValue(sessionState);
+  const { sessionId, startNewChat, createSession } = useSession();
+
   useEffect(() => {
-    if (session?.socket.connected) {
-      return;
-    }
-    fetch("http://localhost:8080/custom-auth", { credentials: "include" }).then(
-      () => {
-        connect({
-          userEnv,
-        });
-      }
-    );
-  }, [connect]);
+    createSession();
+  }, []);
 
   return (
     <>
       <div>
-        <Playground />
+        <Playground sessionId={sessionId} startNewChat={startNewChat} />
       </div>
     </>
   );
