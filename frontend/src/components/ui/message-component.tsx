@@ -23,9 +23,9 @@ const MessageComponent = ({ message }: { message: Message }) => {
         key={message.id}
         className={`flex ${isAi ? "justify-start" : "justify-end"} gap-2`}
       >
-        {isAi && (
+        {/* {isAi && (
           <div className="w-20 text-sm text-blue-500">{message.name}</div>
-        )}
+        )} */}
         <div
           className={`border rounded-lg px-4 py-2 bg-white ${
             isAi ? "border-[#0091EA]" : "border-[#4CAF50]"
@@ -34,11 +34,11 @@ const MessageComponent = ({ message }: { message: Message }) => {
           <Markdown>{message.output}</Markdown>
           <small className="text-xs text-gray-500">{date}</small>
         </div>
-        {!isAi && (
+        {/* {!isAi && (
           <div className="text-sm text-green-500 ml-4 capitalize">
             {message.name}
           </div>
-        )}
+        )} */}
       </div>
     </>
   );

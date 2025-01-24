@@ -13,7 +13,6 @@ function ChatHeader({
         <img src={SBILogo} alt="SBI Life" className="h-14" />
         <div className="text-lg flex flex-col font-bold text-black">
           <span>SBI Life - {sessionId}</span>
-          <span className="text-xs text-gray-500">Powered by Chainlit</span>
         </div>
       </div>
       <button
