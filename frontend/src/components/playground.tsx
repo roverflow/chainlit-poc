@@ -1,7 +1,7 @@
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { ChatHeader } from "./ui/header";
 import MessageComponent from "./ui/message-component";
 
@@ -25,6 +25,16 @@ export function Playground({
     () => (sessionId ? getMessages() : []),
     [sessionId, getMessages]
   );
+
+  const messagesEndRef = useRef<HTMLDivElement>(null);
+
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [messages]);
 
   const handleSendMessage = async () => {
     const content = inputValue.trim();
@@ -86,13 +96,14 @@ export function Playground({
       <div className="flex-1 overflow-auto p-6">
         <div className="space-y-4">
           {messages.map((message) => (
-            <MessageComponent message={message} />
+            <MessageComponent key={message.id} message={message} />
           ))}
           {loading && (
             <div className="flex justify-start w-24">
               <LoadingDots />
             </div>
           )}
+          <div ref={messagesEndRef} />
         </div>
       </div>
       <div className="border-t p-4 bg-white dark:bg-gray-800 sticky bottom-0">
