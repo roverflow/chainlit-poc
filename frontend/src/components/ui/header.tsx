@@ -7,12 +7,13 @@ function ChatHeader({
   sessionId: string | null;
   startNewChat: () => void;
 }) {
+  console.log(sessionId);
   return (
     <header className="flex sticky top-0 bg-background py-1.5 items-center justify-between px-2 md:px-2 gap-2 border-b">
       <div className="flex items-center gap-2">
         <img src={SBILogo} alt="SBI Life" className="h-14" />
         <div className="text-lg flex flex-col font-bold text-black">
-          <span>SBI Life - {sessionId}</span>
+          <span>SBI Life</span>
         </div>
       </div>
       <button

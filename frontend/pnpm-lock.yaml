@@ -11,6 +11,9 @@ importers:
       '@chainlit/react-client':
         specifier: 0.2.2
         version: 0.2.2(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(recoil@0.7.7(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
+      '@google/generative-ai':
+        specifier: ^0.21.0
+        version: 0.21.0
       '@radix-ui/react-slot':
         specifier: ^1.0.2
         version: 1.0.2(@types/react@18.3.18)(react@18.3.1)
@@ -262,6 +265,10 @@ packages:
   '@eslint/js@8.53.0':
     resolution: {integrity: sha512-Kn7K8dx/5U6+cT1yEhpX1w4PCSg0M+XyRILPgvwcEBjerFWCwQj5sbr3/VmxqV0JGHCBCzyd6LxypEuehypY1w==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+
+  '@google/generative-ai@0.21.0':
+    resolution: {integrity: sha512-7XhUbtnlkSEZK15kN3t+tzIMxsbKm/dSkKBFalj+20NvPKe1kBY7mR2P7vuijEn+f06z5+A8bVGKO0v39cr6Wg==}
+    engines: {node: '>=18.0.0'}
 
   '@humanwhocodes/config-array@0.11.13':
     resolution: {integrity: sha512-JSBDMiDKSzQVngfRjOdFXgFfklaXI4K9nLF49Auh21lmBWRLIK3+xTErTWD4KU54pb6coM6ESE7Awz/FNU3zgQ==}
@@ -1412,6 +1419,8 @@ snapshots:
       - supports-color
 
   '@eslint/js@8.53.0': {}
+
+  '@google/generative-ai@0.21.0': {}
 
   '@humanwhocodes/config-array@0.11.13':
     dependencies:

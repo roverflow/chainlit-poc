@@ -9,6 +9,8 @@ import { useMessageHistory } from "@/hooks/useMessageHistory";
 
 import { generateUUID } from "@/lib/utils";
 import { LoadingDots } from "@/assets/icons";
+import useWhisper from "@/hooks/useWhisper";
+import { Mic, MicOff } from "lucide-react";
 
 export function Playground({
   sessionId,
@@ -20,6 +22,9 @@ export function Playground({
   const [inputValue, setInputValue] = useState("");
   const [loading, setLoading] = useState(false);
   const { getMessages, addMessage } = useMessageHistory(sessionId);
+
+  const { isRecording, transcription, startRecording, stopRecording } =
+    useWhisper();
 
   const messages = useMemo(
     () => (sessionId ? getMessages() : []),
@@ -90,6 +95,10 @@ export function Playground({
     }
   };
 
+  useEffect(() => {
+    setInputValue(transcription || "");
+  }, [transcription]);
+
   return (
     <div className="min-h-screen bg-gray-100 dark:bg-gray-900 flex flex-col">
       <ChatHeader sessionId={sessionId} startNewChat={startNewChat} />
@@ -107,7 +116,16 @@ export function Playground({
         </div>
       </div>
       <div className="border-t p-4 bg-white dark:bg-gray-800 sticky bottom-0">
-        <div className="flex items-center space-x-2">
+        <div className="flex items-center justify-center space-x-2">
+          <button
+            className="p-2 rounded-full bg-[#0091EA] text-white mx-2"
+            onMouseDown={startRecording}
+            onMouseUp={stopRecording}
+            onTouchStart={startRecording}
+            onTouchEnd={stopRecording}
+          >
+            {!isRecording ? <MicOff /> : <Mic />}
+          </button>
           <Input
             autoFocus
             disabled={loading}
