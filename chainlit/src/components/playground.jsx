@@ -116,13 +116,29 @@ export function Playground({ sessionId, startNewChat }) {
       <div className="border-t p-4 bg-white sticky bottom-0">
         <div className="flex items-center justify-center space-x-2">
           <button
-            className="p-2 rounded-full bg-[#0091EA] text-white mx-2"
+            className={`p-2 rounded-full ${
+              isRecording ? "bg-red-500" : "bg-[#0091EA]"
+            } text-white mx-2 hidden lg:block`}
             onMouseDown={startRecording}
             onMouseUp={stopRecording}
             onTouchStart={startRecording}
             onTouchEnd={stopRecording}
           >
-            {!isRecording ? <MicOff /> : <Mic />}
+            {!isRecording ? <Mic /> : <Mic className="bg-red-500" />}
+          </button>
+          <button
+            className={`p-2 rounded-full ${
+              isRecording ? "bg-red-500" : "bg-[#0091EA]"
+            } text-white mx-2 lg:hidden block`}
+            onClick={() => {
+              if (isRecording) {
+                stopRecording();
+              } else {
+                startRecording();
+              }
+            }}
+          >
+            {!isRecording ? <Mic /> : <Mic className="bg-red-500" />}
           </button>
           {transcriptionLoading ? (
             <div className="flex items-center justify-center w-full">
