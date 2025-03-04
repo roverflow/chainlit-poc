@@ -8,7 +8,7 @@ function ChatHeader({ sessionId, startNewChat }) {
       <div className="flex items-center gap-2">
         <Image src={SBILogo} alt="SBI Life" height={50} />
         <div className="text-lg flex flex-col font-bold text-black">
-          <span>ABC Life</span>
+          <span>ABC Life Insurance</span>
         </div>
       </div>
       <button
