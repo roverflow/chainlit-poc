@@ -1,5 +1,5 @@
 import Image from "next/image";
-import SBILogo from "@/assets/sbi-life.png";
+import SBILogo from "@/assets/abc-life.png";
 
 function ChatHeader({ sessionId, startNewChat }) {
   console.log(sessionId);
@@ -8,7 +8,7 @@ function ChatHeader({ sessionId, startNewChat }) {
       <div className="flex items-center gap-2">
         <Image src={SBILogo} alt="SBI Life" height={50} />
         <div className="text-lg flex flex-col font-bold text-black">
-          <span>SBI Life</span>
+          <span>ABC Life</span>
         </div>
       </div>
       <button
