@@ -1,4 +1,4 @@
-import SBILogo from "../../assets/sbi-life.png";
+import ABCLife from "../../assets/abc-life.png";
 
 function ChatHeader({
   sessionId,
@@ -11,9 +11,9 @@ function ChatHeader({
   return (
     <header className="flex sticky top-0 bg-background py-1.5 items-center justify-between px-2 md:px-2 gap-2 border-b">
       <div className="flex items-center gap-2">
-        <img src={SBILogo} alt="SBI Life" className="h-14" />
+        <img src={ABCLife} alt="SBI Life" className="h-14" />
         <div className="text-lg flex flex-col font-bold text-black">
-          <span>SBI Life</span>
+          <span>ABC Life</span>
         </div>
       </div>
       <button
